@@ -6,11 +6,11 @@ class CConexion:
     def ConexionBaseDatos():
         try:
             conexion = mysql.connector.connect(
-                user="root",          # Usuario de MySQL
-                password="yorjan2425", # Contraseña de MySQL
-                host="127.0.0.1",     # Host de la base de datos
-                database="clientes",  # Nombre de la base de datos (asegúrate de que sea el correcto)
-                port="3306"           # Puerto de MySQL
+                user="****",          
+                password="*****", 
+                host="*****",     
+                database="clientes",  
+                port="****"           
             )
             print("Conexión exitosa")
             return conexion
