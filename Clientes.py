@@ -2,6 +2,8 @@
 import mysql.connector
 from Conexion import CConexion
 
+
+#Clase clientes 
 class CClientes:
     @staticmethod
     def mostrarClientes():
@@ -9,7 +11,7 @@ class CClientes:
         if conexion:
             try:
                 cursor = conexion.cursor()
-                cursor.execute("SELECT * FROM usuarios")  # Cambiado a 'usuarios'
+                cursor.execute("SELECT * FROM usuarios")  # Consulta SQL 
                 resultados = cursor.fetchall()
                 return resultados
             except mysql.connector.Error as error:
@@ -44,7 +46,7 @@ class CClientes:
         if conexion:
             try:
                 cursor = conexion.cursor()
-                sql = "UPDATE usuarios SET nombres = %s, apellidos = %s, sexo = %s WHERE cc = %s"  # Cambiado a 'usuarios'
+                sql = "UPDATE usuarios SET nombres = %s, apellidos = %s, sexo = %s WHERE cc = %s"  
                 valores = (nombres, apellidos, sexo, cc)
                 cursor.execute(sql, valores)
                 conexion.commit()
@@ -62,7 +64,7 @@ class CClientes:
         if conexion:
             try:
                 cursor = conexion.cursor()
-                sql = "DELETE FROM usuarios WHERE cc = %s"  # Cambiado a 'usuarios'
+                sql = "DELETE FROM usuarios WHERE cc = %s"  
                 valores = (cc,)
                 cursor.execute(sql, valores)
                 conexion.commit()
